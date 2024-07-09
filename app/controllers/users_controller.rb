@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   before_action :must_be_owner_to_view, only: %i[ feed discover ]
 
   private
-
     def set_user
       if params[:username]
         @user = User.find_by!(username: params.fetch(:username))
