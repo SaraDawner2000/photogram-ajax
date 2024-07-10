@@ -1,4 +1,4 @@
-var follow_button = $("#<%= dom_id(current_user) %>_follow_request_form");
+var follow_button = $(".<%= dom_id(current_user) %>_follow_request_to_<%=dom_id(@follow_request.recipient) %>_form");
 var unfollow_button = $("<%= j(render 'follow_requests/follow_unfollow', sender: current_user, recipient: @follow_request.recipient) %>");
 
 follow_button.replaceWith(unfollow_button);
